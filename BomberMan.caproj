@@ -10,6 +10,7 @@
     <unique-id>3up8y9rvnnnca</unique-id>
     <saved-with-version>22100</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors />
@@ -43,6 +44,14 @@
         <object-type name="TiledBackground" sid="8742674676930033">
             <plugin id="TiledBg" />
             <texture original-source="C:\Users\dbga_55\Documents\Assets\0_CommonAssets\Sprites\Blocks\BackgroundTile.png" />
+        </object-type>
+        <object-type name="Sprite" sid="4785926565728636">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6278395957669011" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_55\Documents\Assets\0_CommonAssets\Sprites\Blocks\SolidBlock.png" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
