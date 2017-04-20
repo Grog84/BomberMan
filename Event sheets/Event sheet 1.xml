@@ -3,16 +3,50 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="1" name="IDLE" sid="5343027873319821" static="0" type="number">-1</variable>
+        <variable constant="1" name="TILESIZE" sid="7565191022700813" static="0" type="number">64</variable>
         <variable constant="1" name="DIR_RIGHT" sid="2400194040901823" static="0" type="number">0</variable>
         <variable constant="1" name="DIR_DOWN" sid="6589420770769942" static="0" type="number">90</variable>
         <variable constant="1" name="DIR_LEFT" sid="7919983485942672" static="0" type="number">180</variable>
         <variable constant="1" name="DIR_UP" sid="2037589371008055" static="0" type="number">270</variable>
+        <event-group description="" sid="514958592860189" title="LayoutCreation">
+            <sub-events>
+                <event-block sid="291008038802524">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="522927712627282" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="604436677578935" type="Player">
+                            <param id="0" name="Instance variable">OldX</param>
+                            <param id="1" name="Value">Self.X</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="211701855948411" type="Player">
+                            <param id="0" name="Instance variable">OldY</param>
+                            <param id="1" name="Value">Self.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="798583322747258" type="Player">
+                            <param id="0" name="Instance variable">NextX</param>
+                            <param id="1" name="Value">Self.X</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="695087579749599" type="Player">
+                            <param id="0" name="Instance variable">NextY</param>
+                            <param id="1" name="Value">Self.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="9014038212959771" title="Player1Controls">
             <sub-events>
                 <event-block sid="5505422789031176">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="4850377746292702" type="Player">
                             <param id="0" name="Instance variable">PlayerID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="134142242222584" type="Player">
+                            <param id="0" name="Instance variable">Listening</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
@@ -30,10 +64,6 @@
                                     <param id="0" name="Instance variable">Direction</param>
                                     <param id="1" name="Value">DIR_RIGHT</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="4424059407607073" type="Player">
-                                    <param id="0" name="Animation">&quot;SideR&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="1163357060065458">
@@ -46,10 +76,6 @@
                                 <action id="-10" name="Set value" sid="2657708284721404" type="Player">
                                     <param id="0" name="Instance variable">Direction</param>
                                     <param id="1" name="Value">DIR_DOWN</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="3297137278112756" type="Player">
-                                    <param id="0" name="Animation">&quot;Front&quot;</param>
-                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -64,10 +90,6 @@
                                     <param id="0" name="Instance variable">Direction</param>
                                     <param id="1" name="Value">DIR_LEFT</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="889257802046021" type="Player">
-                                    <param id="0" name="Animation">&quot;SideL&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="6009733148923962">
@@ -80,10 +102,6 @@
                                 <action id="-10" name="Set value" sid="9388973832975237" type="Player">
                                     <param id="0" name="Instance variable">Direction</param>
                                     <param id="1" name="Value">DIR_UP</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="5996269754152162" type="Player">
-                                    <param id="0" name="Animation">&quot;Back&quot;</param>
-                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -114,10 +132,6 @@
                                     <param id="0" name="Instance variable">Direction</param>
                                     <param id="1" name="Value">DIR_RIGHT</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="4424059407607073" type="Player">
-                                    <param id="0" name="Animation">&quot;SideR&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="1163357060065458">
@@ -130,10 +144,6 @@
                                 <action id="-10" name="Set value" sid="2657708284721404" type="Player">
                                     <param id="0" name="Instance variable">Direction</param>
                                     <param id="1" name="Value">DIR_DOWN</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="3297137278112756" type="Player">
-                                    <param id="0" name="Animation">&quot;Front&quot;</param>
-                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -148,10 +158,6 @@
                                     <param id="0" name="Instance variable">Direction</param>
                                     <param id="1" name="Value">DIR_LEFT</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="889257802046021" type="Player">
-                                    <param id="0" name="Animation">&quot;SideL&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="6009733148923962">
@@ -164,10 +170,6 @@
                                 <action id="-10" name="Set value" sid="9388973832975237" type="Player">
                                     <param id="0" name="Instance variable">Direction</param>
                                     <param id="1" name="Value">DIR_UP</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="5996269754152162" type="Player">
-                                    <param id="0" name="Animation">&quot;Back&quot;</param>
-                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -186,10 +188,95 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-1" name="Set X" sid="7038283056211238" type="Player">
-                            <param id="0" name="X">Self.X + Self.Speed * dt</param>
+                        <action id="-10" name="Set value" sid="842219925989460" type="Player">
+                            <param id="0" name="Instance variable">NextX</param>
+                            <param id="1" name="Value">Self.OldX + 64</param>
+                        </action>
+                        <action id="0" name="Call function" sid="180466397922720" type="CheckPosition">
+                            <param id="0" name="Name">&quot;CheckPosition&quot;</param>
+                            <param id="1" name="Parameter {n}">Player.NextX{###}Player.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="392250552254262" type="Player">
+                            <param id="0" name="Instance variable">Listening</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block any="1" sid="853926819776447">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="999464482638482" type="CheckPos">
+                                    <param id="0" name="Object">BlockFixed</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="890535009502885" type="CheckPos">
+                                    <param id="0" name="Object">BlockExplodable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="342621987186756" type="Player">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="460877473925636" type="Player">
+                                    <param id="0" name="Instance variable">Listening</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="285651817971158">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="257079212458665" type="CheckPos">
+                                    <param id="0" name="Object">BlockFixed</param>
+                                </condition>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="512174123446946" type="CheckPos">
+                                    <param id="0" name="Object">BlockExplodable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="4424059407607073" type="Player">
+                                    <param id="0" name="Animation">&quot;SideR&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="7038283056211238" type="Player">
+                                    <param id="0" name="X">Self.X + Self.Speed * dt</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="870221714323970">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="428228312944318" type="System">
+                                            <param id="0" name="Variable">TILESIZE</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">abs(Player.X - Player.OldX)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="306839735844277" type="Player">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="975751233654107" type="Player">
+                                            <param id="0" name="Instance variable">OldX</param>
+                                            <param id="1" name="Value">Self.NextX</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="261277405067511" type="Player">
+                                            <param id="0" name="Instance variable">OldY</param>
+                                            <param id="1" name="Value">Self.NextY</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="405518975174521" type="Player">
+                                            <param id="0" name="X">Self.OldX</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" sid="634749610883638" type="Player">
+                                            <param id="0" name="Y">self.OldY</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="567887083381420" type="Player">
+                                            <param id="0" name="Instance variable">Listening</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="630862370489474">
                     <conditions>
@@ -200,10 +287,95 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-2" name="Set Y" sid="1872045737341144" type="Player">
-                            <param id="0" name="Y">Self.Y + Self.Speed * dt</param>
+                        <action id="-10" name="Set value" sid="597665649824552" type="Player">
+                            <param id="0" name="Instance variable">NextY</param>
+                            <param id="1" name="Value">Self.OldY + 64</param>
+                        </action>
+                        <action id="0" name="Call function" sid="852438763881631" type="CheckPosition">
+                            <param id="0" name="Name">&quot;CheckPosition&quot;</param>
+                            <param id="1" name="Parameter {n}">Player.X{###}Player.NextY</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="883585556516552" type="Player">
+                            <param id="0" name="Instance variable">Listening</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block any="1" sid="139175310370739">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="303848024831776" type="CheckPos">
+                                    <param id="0" name="Object">BlockFixed</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="101527213540666" type="CheckPos">
+                                    <param id="0" name="Object">BlockExplodable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="748520749524704" type="Player">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="485789936473766" type="Player">
+                                    <param id="0" name="Instance variable">Listening</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="442345750744570">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="628835283853456" type="CheckPos">
+                                    <param id="0" name="Object">BlockFixed</param>
+                                </condition>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="149666718213618" type="CheckPos">
+                                    <param id="0" name="Object">BlockExplodable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="3297137278112756" type="Player">
+                                    <param id="0" name="Animation">&quot;Front&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="1872045737341144" type="Player">
+                                    <param id="0" name="Y">Self.Y + Self.Speed * dt</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="724281996747053">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="266888446611896" type="System">
+                                            <param id="0" name="Variable">TILESIZE</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">abs(Player.Y - Player.OldY)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="449031877779154" type="Player">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="939922398670861" type="Player">
+                                            <param id="0" name="Instance variable">OldX</param>
+                                            <param id="1" name="Value">Self.NextX</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="940892684251827" type="Player">
+                                            <param id="0" name="Instance variable">OldY</param>
+                                            <param id="1" name="Value">Self.NextY</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="226338331737452" type="Player">
+                                            <param id="0" name="X">Self.OldX</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" sid="152046792801766" type="Player">
+                                            <param id="0" name="Y">self.OldY</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="850602383022814" type="Player">
+                                            <param id="0" name="Instance variable">Listening</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="6089930163945379">
                     <conditions>
@@ -214,10 +386,95 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-1" name="Set X" sid="395963581037563" type="Player">
-                            <param id="0" name="X">Self.X - Self.Speed * dt</param>
+                        <action id="-10" name="Set value" sid="399277302043681" type="Player">
+                            <param id="0" name="Instance variable">NextX</param>
+                            <param id="1" name="Value">Self.OldX - 64</param>
+                        </action>
+                        <action id="0" name="Call function" sid="519951640967308" type="CheckPosition">
+                            <param id="0" name="Name">&quot;CheckPosition&quot;</param>
+                            <param id="1" name="Parameter {n}">Player.NextX{###}Player.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="815335178185827" type="Player">
+                            <param id="0" name="Instance variable">Listening</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block any="1" sid="748653147030834">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="197054379621236" type="CheckPos">
+                                    <param id="0" name="Object">BlockFixed</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="557803461975950" type="CheckPos">
+                                    <param id="0" name="Object">BlockExplodable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="518226098431214" type="Player">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="322619261757432" type="Player">
+                                    <param id="0" name="Instance variable">Listening</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="584923752532855">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="352012265563787" type="CheckPos">
+                                    <param id="0" name="Object">BlockFixed</param>
+                                </condition>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="502459300198217" type="CheckPos">
+                                    <param id="0" name="Object">BlockExplodable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="889257802046021" type="Player">
+                                    <param id="0" name="Animation">&quot;SideL&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="395963581037563" type="Player">
+                                    <param id="0" name="X">Self.X - Self.Speed * dt</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="494024350977567">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="576873220532403" type="System">
+                                            <param id="0" name="Variable">TILESIZE</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">abs(Player.X - Player.OldX)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="830709881194880" type="Player">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="968489334328450" type="Player">
+                                            <param id="0" name="Instance variable">OldX</param>
+                                            <param id="1" name="Value">Self.NextX</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="882017202146660" type="Player">
+                                            <param id="0" name="Instance variable">OldY</param>
+                                            <param id="1" name="Value">Self.NextY</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="388668407789738" type="Player">
+                                            <param id="0" name="X">Self.OldX</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" sid="872122629386978" type="Player">
+                                            <param id="0" name="Y">self.OldY</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="904540904099147" type="Player">
+                                            <param id="0" name="Instance variable">Listening</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="6553264835541162">
                     <conditions>
@@ -228,8 +485,129 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-2" name="Set Y" sid="6154247741243093" type="Player">
-                            <param id="0" name="Y">Self.Y - Self.Speed * dt</param>
+                        <action id="-10" name="Set value" sid="384795692391072" type="Player">
+                            <param id="0" name="Instance variable">NextY</param>
+                            <param id="1" name="Value">Self.OldY - 64</param>
+                        </action>
+                        <action id="0" name="Call function" sid="958054270234954" type="CheckPosition">
+                            <param id="0" name="Name">&quot;CheckPosition&quot;</param>
+                            <param id="1" name="Parameter {n}">Player.X{###}Player.NextY</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="825374908015213" type="Player">
+                            <param id="0" name="Instance variable">Listening</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block any="1" sid="994203573888871">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="627009157448624" type="CheckPos">
+                                    <param id="0" name="Object">BlockFixed</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="360884331661996" type="CheckPos">
+                                    <param id="0" name="Object">BlockExplodable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="500019632751333" type="Player">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="203603119453842" type="Player">
+                                    <param id="0" name="Instance variable">Listening</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="665586939998419">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="820860969374215" type="CheckPos">
+                                    <param id="0" name="Object">BlockFixed</param>
+                                </condition>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="720727620650647" type="CheckPos">
+                                    <param id="0" name="Object">BlockExplodable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="5996269754152162" type="Player">
+                                    <param id="0" name="Animation">&quot;Back&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="6154247741243093" type="Player">
+                                    <param id="0" name="Y">Self.Y - Self.Speed * dt</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="216223541271418">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="585816564370194" type="System">
+                                            <param id="0" name="Variable">TILESIZE</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">abs(Player.Y - Player.OldY)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="777922640826305" type="Player">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="225047651212156" type="Player">
+                                            <param id="0" name="Instance variable">OldX</param>
+                                            <param id="1" name="Value">Self.NextX</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="119636214410482" type="Player">
+                                            <param id="0" name="Instance variable">OldY</param>
+                                            <param id="1" name="Value">Self.NextY</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="991712878853112" type="Player">
+                                            <param id="0" name="X">Self.OldX</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" sid="335656716594201" type="Player">
+                                            <param id="0" name="Y">self.OldY</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="248257819680278" type="Player">
+                                            <param id="0" name="Instance variable">Listening</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8507174967001077">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9448442264853142" type="Player">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">IDLE</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="600387948172932" type="Player">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="191938361011081" type="Player">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="153770648871079" title="Functions">
+            <sub-events>
+                <event-block sid="865027024705755">
+                    <conditions>
+                        <condition id="0" name="On function" sid="498041900001516" type="CheckPosition">
+                            <param id="0" name="Name">&quot;CheckPosition&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="874071721804210" type="CheckPos">
+                            <param id="0" name="X">CheckPosition.Param(0)</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="478896725774977" type="CheckPos">
+                            <param id="0" name="Y">CheckPosition.Param(1)</param>
                         </action>
                     </actions>
                 </event-block>

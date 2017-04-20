@@ -2633,6 +2633,11 @@
                         <MoveTime>0.25</MoveTime>
                         <Timer>0</Timer>
                         <PlayerID>1</PlayerID>
+                        <Listening>1</Listening>
+                        <NextX>0</NextX>
+                        <NextY>0</NextY>
+                        <OldX>0</OldX>
+                        <OldY>0</OldY>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2652,11 +2657,24 @@
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
+                    <effect-instances>
+                        <effect-instance type="ReplaceColor">
+                            <parameters>
+                                <b-replace>0</b-replace>
+                                <b-source>255</b-source>
+                                <g-replace>0</g-replace>
+                                <g-source>255</g-source>
+                                <r-replace>0</r-replace>
+                                <r-source>255</r-source>
+                                <tolerance>0.01</tolerance>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>97</x>
-                        <y>84</y>
+                        <y>97</y>
                         <z>0</z>
                         <width>64</width>
                         <height>128</height>
@@ -2680,6 +2698,11 @@
                         <MoveTime>0.25</MoveTime>
                         <Timer>0</Timer>
                         <PlayerID>2</PlayerID>
+                        <Listening>1</Listening>
+                        <NextX>0</NextX>
+                        <NextY>0</NextY>
+                        <OldX>0</OldX>
+                        <OldY>0</OldY>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2699,17 +2722,52 @@
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
+                    <effect-instances>
+                        <effect-instance type="ReplaceColor">
+                            <parameters>
+                                <b-replace>0</b-replace>
+                                <b-source>255</b-source>
+                                <g-replace>0</g-replace>
+                                <g-source>255</g-source>
+                                <r-replace>0</r-replace>
+                                <r-source>255</r-source>
+                                <tolerance>0.5</tolerance>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>544</x>
-                        <y>544</y>
+                        <x>543</x>
+                        <y>543</y>
                         <z>0</z>
                         <width>64</width>
                         <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.7578125</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="CheckPos" uid="92">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-112</x>
+                        <y>272</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
