@@ -18,7 +18,9 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
     </used-behaviors>
     <used-effects>
         <effect author="Scirra" id="replacecolor">Replace color</effect>
@@ -82,6 +84,8 @@
                 <instance-variable name="NextY" sid="162304817869468" type="number" />
                 <instance-variable name="OldX" sid="182759470893092" type="number" />
                 <instance-variable name="OldY" sid="816957998575604" type="number" />
+                <instance-variable name="BombsNbr" sid="818243739315070" type="number" />
+                <instance-variable name="BombsRange" sid="901299989543134" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="9004972031580174">
@@ -385,6 +389,133 @@
         </object-type>
         <object-type name="DEBUGPL2" sid="433549726517182">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="Bomb" sid="218440722501523">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Range" sid="390717480865381" type="number" />
+                <instance-variable name="Counter" sid="192023735806647" type="number" />
+                <instance-variable name="BomberUID" sid="203206780509711" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="570123970892797">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="116533998355097" speed="8">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomb\Bomb_f01.png">
+                        <collision-poly>
+                            <point x="0.145833" y="0.145833" />
+                            <point x="0.5" y="0" />
+                            <point x="0.854167" y="0.145833" />
+                            <point x="1" y="0.5" />
+                            <point x="0.854167" y="0.854167" />
+                            <point x="0.5" y="1" />
+                            <point x="0.145833" y="0.854167" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomb\Bomb_f02.png">
+                        <collision-poly>
+                            <point x="0.145833" y="0.145833" />
+                            <point x="0.5" y="0" />
+                            <point x="0.854167" y="0.145833" />
+                            <point x="1" y="0.5" />
+                            <point x="0.854167" y="0.854167" />
+                            <point x="0.5" y="1" />
+                            <point x="0.145833" y="0.854167" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomb\Bomb_f03.png">
+                        <collision-poly>
+                            <point x="0.145833" y="0.145833" />
+                            <point x="0.5" y="0" />
+                            <point x="0.854167" y="0.145833" />
+                            <point x="1" y="0.5" />
+                            <point x="0.854167" y="0.854167" />
+                            <point x="0.5" y="1" />
+                            <point x="0.145833" y="0.854167" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Flame" sid="646328590725005">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="358945627404416">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="476692890678617">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="5" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="588287601762377" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Flame\Flame_f00.png">
+                        <collision-poly>
+                            <point x="0.25" y="0.25" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.6875" y="0.3125" />
+                            <point x="0.958333" y="0.5" />
+                            <point x="0.875" y="0.875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.125" y="0.875" />
+                            <point x="0.0416667" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Flame\Flame_f01.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.708333" y="0.291667" />
+                            <point x="0.958333" y="0.5" />
+                            <point x="0.875" y="0.875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.145833" y="0.854167" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Flame\Flame_F02.png">
+                        <collision-poly>
+                            <point x="0.270833" y="0.270833" />
+                            <point x="0.5" y="0.104167" />
+                            <point x="0.708333" y="0.291667" />
+                            <point x="0.979167" y="0.5" />
+                            <point x="0.875" y="0.875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0833333" y="0.916667" />
+                            <point x="0.0833333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Flame\Flame_F03.png">
+                        <collision-poly>
+                            <point x="0.270833" y="0.270833" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.708333" y="0.291667" />
+                            <point x="0.958333" y="0.5" />
+                            <point x="0.916667" y="0.916667" />
+                            <point x="0.5" y="1" />
+                            <point x="0.104167" y="0.895833" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Flame\Flame_F04.png">
+                        <collision-poly>
+                            <point x="0.333333" y="0.333333" />
+                            <point x="0.5" y="0.104167" />
+                            <point x="0.770833" y="0.229167" />
+                            <point x="0.958333" y="0.5" />
+                            <point x="0.895833" y="0.895833" />
+                            <point x="0.5" y="1" />
+                            <point x="0.104167" y="0.895833" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
