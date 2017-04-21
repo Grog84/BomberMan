@@ -13,7 +13,6 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
@@ -86,6 +85,7 @@
                 <instance-variable name="OldY" sid="816957998575604" type="number" />
                 <instance-variable name="BombsNbr" sid="818243739315070" type="number" />
                 <instance-variable name="BombsRange" sid="901299989543134" type="number" />
+                <instance-variable name="DropBomb" sid="417105865777218" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="9004972031580174">
@@ -384,12 +384,6 @@
         <object-type name="Function" sid="152577951589506">
             <plugin id="Function" />
         </object-type>
-        <object-type name="DEBUGPL1" sid="242895482742869">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="DEBUGPL2" sid="433549726517182">
-            <plugin id="Text" />
-        </object-type>
         <object-type name="Bomb" sid="218440722501523">
             <plugin id="Sprite" />
             <instance-variables>
@@ -512,6 +506,49 @@
                             <point x="0.5" y="1" />
                             <point x="0.104167" y="0.895833" />
                             <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Powerup" sid="386164528040162">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="723048615800309" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Powerups\BombPowerup.png">
+                        <collision-poly>
+                            <point x="0.03125" y="0.03125" />
+                            <point x="0.5" y="0" />
+                            <point x="0.96875" y="0.03125" />
+                            <point x="1" y="0.5" />
+                            <point x="0.96875" y="0.96875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.03125" y="0.96875" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Powerups\FlamePowerup.png">
+                        <collision-poly>
+                            <point x="0.03125" y="0.03125" />
+                            <point x="0.5" y="0" />
+                            <point x="0.96875" y="0.03125" />
+                            <point x="1" y="0.5" />
+                            <point x="0.96875" y="0.96875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.03125" y="0.96875" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Powerups\SpeedPowerup.png">
+                        <collision-poly>
+                            <point x="0.03125" y="0.03125" />
+                            <point x="0.5" y="0" />
+                            <point x="0.96875" y="0.03125" />
+                            <point x="1" y="0.5" />
+                            <point x="0.96875" y="0.96875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.03125" y="0.96875" />
+                            <point x="0" y="0.5" />
                         </collision-poly>
                     </frame>
                 </animation>
