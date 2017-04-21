@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
@@ -378,6 +379,12 @@
         </object-type>
         <object-type name="Function" sid="152577951589506">
             <plugin id="Function" />
+        </object-type>
+        <object-type name="DEBUGPL1" sid="242895482742869">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="DEBUGPL2" sid="433549726517182">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families />
