@@ -79,7 +79,7 @@
                             <actions>
                                 <action id="0" name="Spawn another object" sid="134032882870038" type="Player">
                                     <param id="0" name="Object">CheckPos</param>
-                                    <param id="1" name="Layer">1</param>
+                                    <param id="1" name="Layer">0</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="290003772038478" type="CheckPos">
@@ -264,25 +264,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="197993890653500">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="834200088793009" type="Keyboard">
-                                    <param id="0" name="Key">96 (0 (tn))</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="756039687877628" type="Player">
-                                    <param id="0" name="Instance variable">BombsNbr</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Spawn another object" sid="161078816234468" type="Player">
-                                    <param id="0" name="Object">Bomb</param>
-                                    <param id="1" name="Layer">1</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="442564494699425">
@@ -297,8 +278,8 @@
                     <sub-events>
                         <event-block sid="769921213585587">
                             <conditions>
-                                <condition id="2" name="Key is down" sid="833373503396766" type="Keyboard">
-                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                <condition id="2" name="Key is down" sid="834200088793009" type="Keyboard">
+                                    <param id="0" name="Key">96 (0 (tn))</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="453779782809986" type="Player">
                                     <param id="0" name="Instance variable">BombsNbr</param>
@@ -717,7 +698,7 @@
                             <actions>
                                 <action id="-3" name="Create object" sid="774091296643998" type="System">
                                     <param id="0" name="Object to create">Flame</param>
-                                    <param id="1" name="Layer">1</param>
+                                    <param id="1" name="Layer">0</param>
                                     <param id="2" name="X">Bomb.X + (Function.Param(1) * loopindex(&quot;Range&quot;))</param>
                                     <param id="3" name="Y">Bomb.Y + (Function.Param(2) * loopindex(&quot;Range&quot;))</param>
                                 </action>
@@ -770,7 +751,7 @@
                             <actions>
                                 <action id="0" name="Spawn another object" sid="512589464289116" type="Player">
                                     <param id="0" name="Object">Bomb</param>
-                                    <param id="1" name="Layer">1</param>
+                                    <param id="1" name="Layer">0</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
                                 <action id="-12" name="Subtract from" sid="534645874471218" type="Player">
@@ -800,7 +781,7 @@
                     <actions>
                         <action id="0" name="Spawn another object" sid="331573511792646" type="Bomb">
                             <param id="0" name="Object">Flame</param>
-                            <param id="1" name="Layer">1</param>
+                            <param id="1" name="Layer">0</param>
                             <param id="2" name="Image point">0</param>
                         </action>
                     </actions>
@@ -985,7 +966,7 @@
                             <actions>
                                 <action id="0" name="Spawn another object" sid="704803890110760" type="BlockExplodable">
                                     <param id="0" name="Object">Powerup</param>
-                                    <param id="1" name="Layer">1</param>
+                                    <param id="1" name="Layer">0</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="546332709009470" type="Powerup">
