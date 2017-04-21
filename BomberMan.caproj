@@ -18,7 +18,6 @@
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
-        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
         <effect author="Scirra" id="replacecolor">Replace color</effect>
@@ -55,11 +54,6 @@
         </object-type>
         <object-type name="BlockFixed" sid="4785926565728636">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid" sid="9437178104082224">
-                    <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6278395957669011" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_55\Documents\Assets\0_CommonAssets\Sprites\Blocks\SolidBlock.png" />
@@ -68,11 +62,6 @@
         </object-type>
         <object-type name="BlockExplodable" sid="2578888839132942">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid" sid="5959815587024566">
-                    <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7405616497437459" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_55\Documents\Assets\0_CommonAssets\Sprites\Blocks\ExplodableBlock.png" />
@@ -378,13 +367,16 @@
         </object-type>
         <object-type name="CheckPos" sid="876786865199135">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="ID" sid="912672199369533" type="number" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="130125557745896" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="CheckPosition" sid="152577951589506">
+        <object-type name="Function" sid="152577951589506">
             <plugin id="Function" />
         </object-type>
     </object-folder>
@@ -397,7 +389,7 @@
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="90" />
-        <global-instance type="CheckPosition" uid="93" />
+        <global-instance type="Function" uid="93" />
     </global-instances>
     <sounds-folder />
     <music-folder />
