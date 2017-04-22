@@ -12,13 +12,16 @@
     <used-plugins>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -811,17 +814,101 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sprite" sid="818395127285969">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="376175237340962" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Menu\title_background.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Title" sid="306919122778764">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="641104453741934">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Sine2" sid="365117944008533">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Sine3" sid="661009425039365">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="218455603802162" speed="5">
+                    <frame duration="1" hotspotX="0.467866" hotspotY="1.15432" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Menu\title_titletext.png">
+                        <collision-poly>
+                            <point x="0.0282776" y="0.0987654" />
+                            <point x="0.943445" y="0.0123457" />
+                            <point x="0.395887" y="0.981481" />
+                            <point x="0.467866" y="0.962963" />
+                            <point x="0.544987" y="0.969136" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerButton" sid="358554654050485">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="OnePlayer" pingpong="0" repeatcount="1" repeatto="0" sid="458478645925332" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.518519" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Menu\One_Player_Normal.png">
+                        <collision-poly>
+                            <point x="0.0681818" y="0.333333" />
+                            <point x="0.5" y="0.222222" />
+                            <point x="0.939394" y="0.296296" />
+                            <point x="0.939394" y="0.481481" />
+                            <point x="0.5" y="0.481481" />
+                            <point x="0.0681818" y="0.666667" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.518519" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Menu\One_Player_Hover.png">
+                        <collision-poly>
+                            <point x="0.0681818" y="0.333333" />
+                            <point x="0.5" y="0.222222" />
+                            <point x="0.939394" y="0.296296" />
+                            <point x="0.939394" y="0.481481" />
+                            <point x="0.5" y="0.481481" />
+                            <point x="0.0681818" y="0.666667" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="TwoPlayers" pingpong="0" repeatcount="1" repeatto="0" sid="918005703599153" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.518519" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Menu\Two_Players_Normal.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.518519" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Menu\Two_Players_Hover.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Info" sid="429573118735172">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="224585372888418" speed="0">
+                    <frame duration="1" hotspotX="0.503311" hotspotY="0.521739" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Menu\Control_PlayerOne.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.521739" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Menu\Control_PlayerTwo.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="571474790128160">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="txtDescription" sid="874805302028361">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>Menu.xml</layout>
+        <layout>Level.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>esLevel.xml</event-sheet>
+        <event-sheet>esMenu.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="90" />
         <global-instance type="Function" uid="93" />
+        <global-instance type="Mouse" uid="114" />
     </global-instances>
     <sounds-folder />
     <music-folder />

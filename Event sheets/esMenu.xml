@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esMenu</name>
+    <events>
+        <event-block sid="216136951183875">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="351673047615319" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="314849611722705" type="txtDescription">
+                    <param id="0" name="Family name">&quot;Anton&quot;</param>
+                    <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Anton&quot;</param>
+                </action>
+                <action id="2" name="Set font face" sid="471857233175516" type="txtDescription">
+                    <param id="0" name="Font face">&quot;Anton&quot;</param>
+                    <param id="1" name="Style">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="453281157009313">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="338726383587389" type="Mouse">
+                    <param id="0" name="Object">PlayerButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="549774453917354" type="PlayerButton">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="439538542979385">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="351612427652205" type="Mouse">
+                    <param id="0" name="Object">PlayerButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="444081756359940" type="PlayerButton">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="496146312646897">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="768908907502706" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">PlayerButton</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>
