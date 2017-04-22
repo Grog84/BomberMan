@@ -308,7 +308,7 @@
                     <sub-events>
                         <event-block sid="769921213585587">
                             <conditions>
-                                <condition id="2" name="Key is down" sid="834200088793009" type="Keyboard">
+                                <condition id="0" name="On key pressed" sid="834200088793009" type="Keyboard">
                                     <param id="0" name="Key">96 (0 (tn))</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="453779782809986" type="Player">
@@ -918,6 +918,31 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="532376304433624">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="922903897857489" type="Bomb">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="931230628659548" type="Bomb">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="305820456283775">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="921002647194291" type="Bomb">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="319019422967128" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="694318914428051" type="Bomb">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="610094205269744" title="Explosions">
@@ -1095,6 +1120,16 @@
         </event-group>
         <event-group description="" sid="855085614495546" title="Creep">
             <sub-events>
+                <event-block sid="740051358243851">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="916257753039467" type="Player">
+                            <param id="0" name="Object">Creep</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="716450739944223" type="Player" />
+                    </actions>
+                </event-block>
                 <event-block sid="134165484265714">
                     <conditions>
                         <condition id="0" name="On function" sid="468365170566201" type="Function">
@@ -1277,15 +1312,5 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="740051358243851">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="916257753039467" type="Player">
-                    <param id="0" name="Object">Creep</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="716450739944223" type="Player" />
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>
