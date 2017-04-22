@@ -205,7 +205,7 @@
                     <sub-events>
                         <event-block sid="944987912653756">
                             <conditions>
-                                <condition id="2" name="Key is down" sid="579769314109793" type="Keyboard">
+                                <condition id="0" name="On key pressed" sid="579769314109793" type="Keyboard">
                                     <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="232407439374157" type="Player">
@@ -1135,17 +1135,24 @@
                         <condition id="0" name="On function" sid="721076189866232" type="Function">
                             <param id="0" name="Name">&quot;CreepsRegenMap&quot;</param>
                         </condition>
-                        <condition id="-11" name="For Each" sid="802320863427175" type="System">
-                            <param id="0" name="Object">Creep</param>
-                        </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="839171593183196" type="Creep" />
-                        <action behavior="Pathfinding" id="0" name="Find path" sid="523907853696054" type="Creep">
-                            <param id="0" name="X">Self.CurrentDestX</param>
-                            <param id="1" name="Y">Self.CurrentDestY</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="819491044682548">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="802320863427175" type="System">
+                                    <param id="0" name="Object">Creep</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="839171593183196" type="Creep" />
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="523907853696054" type="Creep">
+                                    <param id="0" name="X">Self.CurrentDestX</param>
+                                    <param id="1" name="Y">Self.CurrentDestY</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="769336950643322">
                     <conditions>
