@@ -42,15 +42,5 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="496146312646897">
-            <conditions>
-                <condition id="6" name="On object clicked" sid="768908907502706" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">PlayerButton</param>
-                </condition>
-            </conditions>
-            <actions />
-        </event-block>
     </events>
 </c2eventsheet>
