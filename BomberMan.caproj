@@ -10,6 +10,7 @@
     <unique-id>3up8y9rvnnnca</unique-id>
     <saved-with-version>24400</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -21,6 +22,7 @@
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
@@ -851,6 +853,9 @@
         </object-type>
         <object-type name="PlayerButton" sid="358554654050485">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="ID" sid="948010332631068" type="number" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="2" loop="0" name="OnePlayer" pingpong="0" repeatcount="1" repeatto="0" sid="458478645925332" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.518519" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Menu\One_Player_Normal.png">
@@ -894,6 +899,33 @@
         </object-type>
         <object-type name="txtDescription" sid="874805302028361">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="EndLevel" sid="756020879433575">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Rotate" sid="973974218096097">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="254181618287009" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Blocks\Portal.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.9375" y="0.5" />
+                            <point x="0.8125" y="0.8125" />
+                            <point x="0.5" y="0.9375" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="Array" sid="338411153626200">
+            <plugin id="Arr" />
         </object-type>
     </object-folder>
     <families />

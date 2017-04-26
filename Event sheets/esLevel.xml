@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>esLevel</name>
     <events>
+        <variable constant="0" name="Players" sid="211995790521177" static="0" type="number">2</variable>
         <variable constant="1" name="IDLE" sid="5343027873319821" static="0" type="number">-1</variable>
         <variable constant="1" name="TILESIZE" sid="7565191022700813" static="0" type="number">64</variable>
         <variable constant="1" name="DIR_RIGHT" sid="2400194040901823" static="0" type="number">0</variable>
@@ -36,6 +37,42 @@
                             <param id="0" name="Name">&quot;CreepPickDestination&quot;</param>
                             <param id="1" name="Parameter {n}">Creep.UID</param>
                         </action>
+                    </actions>
+                </event-block>
+                <event-block sid="270719981103039">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="768506727151555" type="System">
+                            <param id="0" name="Variable">Players</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="444777379255099" type="System">
+                            <param id="0" name="Group name">&quot;Player2Controls&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="459665654892235">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="199117840229770" type="System">
+                            <param id="0" name="Variable">Players</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="752949863951095" type="Player">
+                            <param id="0" name="Instance variable">PlayerID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="748685791147127" type="System">
+                            <param id="0" name="Group name">&quot;Player2Controls&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="146636678673110" type="Player" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -225,7 +262,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="1540337303098404" title="Player2Controls2">
+        <event-group description="" inactive="1" sid="1540337303098404" title="Player2Controls">
             <sub-events>
                 <event-block sid="6756173447769621">
                     <conditions>
@@ -1316,5 +1353,54 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="645092042138293">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="478933168322749" type="System">
+                    <param id="0" name="First value">BlockExplodable.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="781038508297539" type="EndLevel">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="432696866565675">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="952068504669633" type="System">
+                    <param id="0" name="First value">Player.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="437695584003392" type="System">
+                    <param id="0" name="Variable">Winner</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="510103209618989" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="733477810145865">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="953148671771927" type="Player">
+                    <param id="0" name="Object">EndLevel</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="220113197186364" type="EndLevel" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="176315188803744" type="System">
+                    <param id="0" name="Variable">Winner</param>
+                    <param id="1" name="Value">Player.PlayerID</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="563912482812233" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
